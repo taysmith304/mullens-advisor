@@ -834,7 +834,7 @@ export default function MullensAdvisor() {
         }),
       });
       const data = await response.json();
-      const reply = data.content?.map((b) => b.text || "").join("") || "No response received.";
+      const reply = (data.content && data.content.length > 0) ? data.content.map((b) => b.text || "").join("") : (data.error || JSON.
       setMessages([...newMessages, { role: "assistant", content: reply }]);
     } catch (err) {
       setMessages([...newMessages, { role: "assistant", content: "Error connecting to the advisor. Please try again." }]);
