@@ -5,7 +5,7 @@ export default async (req, context) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-api-key": "sk-ant-api03-klj-ea8D5s1c7IBruy42Cz1Y1IpUD065rxnUWar-u4Xf5g5kmXJmNyunTlGEqAz6nUATrfLlZMorrnDdnrib6g-utEC6gAA",
+        "x-api-key": process.env.ANTHROPIC_API_KEY,
         "anthropic-version": "2023-06-01"
       },
       body: JSON.stringify(body)
